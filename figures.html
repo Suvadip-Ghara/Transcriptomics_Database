@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figures - CST-Hub PUFA Transcriptomics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-top-section">
+            <img src="CIFA Logo.png" alt="CIFA Logo" class="logo-top">
+            <img src="IASRI.png" alt="ICAR-IASRI Logo" class="logo-top" style="margin-left: 20px;">
+        </div>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-text">
+                    <h1>CST-Hub<sup>TDB</sup></h1>
+                </div>
+            </div>
+            <button class="hamburger" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="deg.html">DEG</a></li>
+                    <li><a href="functional.html">Search</a></li>
+                    <li><a href="pathway.html">Pathway</a></li>
+                    <li><a href="figures.html" class="active">Figures</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-container">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-images"></i> PUFA Transcriptomics Figures</h2>
+                <p>Explore PCA plots, volcano plots, GO enrichment and KEGG pathway dot plots from PUFA transcriptomics analyses across tissues and dietary treatments</p>
+            </div>
+
+            <!-- Study Group Tabs -->
+            <div class="fig-study-tabs">
+                <button class="fig-study-tab active" data-group="captive-wild">
+                    <i class="fas fa-fish"></i> Captive vs Wild
+                </button>
+                <button class="fig-study-tab" data-group="pufa-treatments">
+                    <i class="fas fa-flask"></i> PUFA Dietary Treatments
+                </button>
+            </div>
+
+            <!-- Captive vs Wild Group -->
+            <div class="fig-group" id="group-captive-wild">
+                <div class="fig-dataset-selector">
+                    <button class="fig-dataset-btn active" data-dataset="FB">Female Brain (FB)</button>
+                    <button class="fig-dataset-btn" data-dataset="FGO">Female Gonad (FGO)</button>
+                    <button class="fig-dataset-btn" data-dataset="MB">Male Brain (MB)</button>
+                    <button class="fig-dataset-btn" data-dataset="MGO">Male Gonad (MGO)</button>
+                </div>
+            </div>
+
+            <!-- PUFA Treatments Group -->
+            <div class="fig-group" id="group-pufa-treatments" style="display: none;">
+                <div class="fig-dataset-selector">
+                    <button class="fig-dataset-btn active" data-dataset="T1L">Treatment 1 &ndash; Liver</button>
+                    <button class="fig-dataset-btn" data-dataset="T1M">Treatment 1 &ndash; Muscle</button>
+                    <button class="fig-dataset-btn" data-dataset="T2L">Treatment 2 &ndash; Liver</button>
+                    <button class="fig-dataset-btn" data-dataset="T2M">Treatment 2 &ndash; Muscle</button>
+                    <button class="fig-dataset-btn" data-dataset="T3L">Treatment 3 &ndash; Liver</button>
+                    <button class="fig-dataset-btn" data-dataset="T3M">Treatment 3 &ndash; Muscle</button>
+                    <button class="fig-dataset-btn" data-dataset="T4L">Treatment 4 &ndash; Liver</button>
+                    <button class="fig-dataset-btn" data-dataset="T4M">Treatment 4 &ndash; Muscle</button>
+                </div>
+            </div>
+
+            <!-- Figures Display Area -->
+            <div id="figuresDisplay"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About CST-Hub</h3>
+                    <p style="color: #94a3b8; line-height: 1.6;">CST-Hub is a comprehensive transcriptomics resource for gene expression analysis and functional genomics in striped murrel (<i>Channa striata</i>), developed by ICAR-CIFA to support aquaculture research and development.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Project</a></li>
+                        <li><a href="deg.html">DEG Analysis</a></li>
+                        <li><a href="functional.html">Search Genes</a></li>
+                        <li><a href="pathway.html">Pathway Analysis</a></li>
+                        <li><a href="figures.html">Figures Gallery</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Information</h3>
+                    <ul id="footerInfoMenu">
+                        <li><a href="#" onclick="toggleFooterSection('about-info')">About Us</a></li>
+                        <li><a href="#" onclick="toggleFooterSection('team-info')">Our Team</a></li>
+                        <li><a href="#" onclick="toggleFooterSection('contact-info')">Contact Us</a></li>
+                        <li><a href="privacy.html" onclick="event.stopPropagation()">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html" onclick="event.stopPropagation()">Website Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-map-marker-alt" style="width: 20px; color: var(--md-tertiary-light);"></i> <strong>ICAR-CIFA</strong><br><span style="margin-left: 28px; display: block;">Kausalyaganga, Bhubaneswar, Odisha 751023</span></li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-phone" style="width: 20px; color: var(--md-tertiary-light);"></i> +91-674-2305407</li>
+                        <li style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="width: 20px; color: var(--md-tertiary-light);"></i> director@cifa.res.in</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                        <a href="https://twitter.com/icarcifa/" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://www.facebook.com/icarcifa" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://www.youtube.com/channel/UC0jyxfGad5yDGE-nBe6H-9w" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                    <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.15); margin: 1.5rem 0;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-map-marker-alt" style="width: 20px; color: var(--md-tertiary-light);"></i> <strong>ICAR-IASRI</strong><br><span style="margin-left: 28px; display: block;">Library Avenue, Pusa, New Delhi 110012</span></li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-phone" style="width: 20px; color: var(--md-tertiary-light);"></i> +91-11-25847121</li>
+                        <li style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="width: 20px; color: var(--md-tertiary-light);"></i> director.iasri@icar.gov.in</li>
+                    </ul>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                        <a href="https://twitter.com/IABORASDIARY" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://www.facebook.com/iaboracademy/" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-facebook fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2026 CST-Hub - Channa striata Transcriptomics Hub | Powered by ICAR-CIFA</p>
+            </div>
+        </div>
+
+        <!-- Hidden Footer Info Sections -->
+        <div id="footerInfoContent" style="display: none; background: rgba(0,0,0,0.3); padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div id="about-info" class="footer-info-section" style="display: none;">
+                        <h4 style="color: var(--md-tertiary-light); margin-bottom: 1rem;"><i class="fas fa-info-circle"></i> About Us</h4>
+                        <p style="color: #94a3b8; line-height: 1.7; font-size: 14px;">
+                            CST-Hub is developed by ICAR-Central Institute of Freshwater Aquaculture (CIFA) as a comprehensive transcriptomics resource. Our mission is to provide researchers and aquaculture scientists with accessible, high-quality gene expression data to advance research in striped murrel biology and aquaculture innovation.
+                        </p>
+                    </div>
+                    <div id="team-info" class="footer-info-section" style="display: none;">
+                        <h4 style="color: var(--md-tertiary-light); margin-bottom: 1rem;"><i class="fas fa-users"></i> Our Team</h4>
+                        <p style="color: #94a3b8; line-height: 1.7; font-size: 14px;">
+                            <strong>Principal Investigator:</strong> Dr. J. K. Sundaray (ICAR-CIFA)<br>
+                            <strong>Co-Investigators:</strong> Dr. Rajesh Kumar, Dr. Lakshman Sahoo, Mr. Jackson Debbarma (ICAR-CIFA), Dr. Dinesh Kumar, Dr. Sarika (ICAR-IASRI)<br>
+                            <strong>Research Scholars (YP-II):</strong> Dr. Madhusmita Mohapatra, Iyyappan Somasundharam, Suvadip Ghara (ICAR-CIFA)<br>
+                            Our dedicated team brings expertise in genomics, bioinformatics, and aquaculture research.
+                        </p>
+                    </div>
+                    <div id="contact-info" class="footer-info-section" style="display: none;">
+                        <h4 style="color: var(--md-tertiary-light); margin-bottom: 1rem;"><i class="fas fa-phone-alt"></i> Contact Us</h4>
+                        <p style="color: #94a3b8; line-height: 1.7; font-size: 14px;">
+                            <strong>Email:</strong> director@cifa.res.in<br>
+                            <strong>Phone:</strong> +91-674-2305407<br>
+                            <strong>Address:</strong> ICAR-CIFA, Kausalyaganga, Bhubaneswar, Odisha 751023
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script_api.js"></script>
+    <script>
+    (function() {
+        'use strict';
+
+        // ========== Dataset Configuration ==========
+        var BASE = 'FIgures_PUFA_Transcriptomics/';
+
+        var DATASETS = {
+            FB: {
+                label: 'Female Brain (FB)',
+                folder: 'Fig_FB',
+                figures: [
+                    { file: 'FB_samples_PCA_plot.png', title: 'PCA Plot', category: 'qc' },
+                    { file: 'FB_Volcano_plot.png', title: 'Volcano Plot', category: 'deg' },
+                    { file: 'FB_GO_DotPlot_upregulated.jpg', title: 'GO Enrichment — Upregulated', category: 'go' },
+                    { file: 'FB_GO_DotPlot_downregulated.jpg', title: 'GO Enrichment — Downregulated', category: 'go' },
+                    { file: 'FB_KEGG_DotPlot_upregulated.jpg', title: 'KEGG Pathway — Upregulated', category: 'kegg' },
+                    { file: 'FB_KEGG_DotPlot_downregulated.jpg', title: 'KEGG Pathway — Downregulated', category: 'kegg' }
+                ]
+            },
+            FGO: {
+                label: 'Female Gonad (FGO)',
+                folder: 'Fig_FGO',
+                figures: [
+                    { file: 'FGO_samples_PCA_plot.png', title: 'Samples PCA Plot', category: 'qc' },
+                    { file: 'FGO_PCA_plot.png', title: 'PCA Plot', category: 'qc' },
+                    { file: 'FGO_Pearson_Correlation_Heatmap.png', title: 'Pearson Correlation Heatmap', category: 'qc' },
+                    { file: 'FGO_Volcano_plot.png', title: 'Volcano Plot', category: 'deg' },
+                    { file: 'FGO_GO_DotPlot_upregulated.jpg', title: 'GO Enrichment — Upregulated', category: 'go' },
+                    { file: 'FGO_GO_DotPlot_downregulated.jpg', title: 'GO Enrichment — Downregulated', category: 'go' },
+                    { file: 'FGO_KEGG_DotPlot_upregulated.jpg', title: 'KEGG Pathway — Upregulated', category: 'kegg' },
+                    { file: 'FGO_KEGG_DotPlot_downregulated.jpg', title: 'KEGG Pathway — Downregulated', category: 'kegg' }
+                ]
+            },
+            MB: {
+                label: 'Male Brain (MB)',
+                folder: 'Fig_MB',
+                figures: [
+                    { file: 'MB_samples_PCA_plot.png', title: 'PCA Plot', category: 'qc' },
+                    { file: 'MB_Volcano_plot.png', title: 'Volcano Plot', category: 'deg' },
+                    { file: 'MB_GO_DotPlot_upregulated.jpg', title: 'GO Enrichment — Upregulated', category: 'go' },
+                    { file: 'MB_GO_DotPlot_downregulated.jpg', title: 'GO Enrichment — Downregulated', category: 'go' },
+                    { file: 'MB_KEGG_DotPlot_upregulated.jpg', title: 'KEGG Pathway — Upregulated', category: 'kegg' },
+                    { file: 'MB_KEGG_DotPlot_downregulated.jpg', title: 'KEGG Pathway — Downregulated', category: 'kegg' }
+                ]
+            },
+            MGO: {
+                label: 'Male Gonad (MGO)',
+                folder: 'Fig_MGO',
+                figures: [
+                    { file: 'MGO_samples_PCA_plot.png', title: 'PCA Plot', category: 'qc' },
+                    { file: 'MGO_Volcano_plot.png', title: 'Volcano Plot', category: 'deg' },
+                    { file: 'MGO_GO_DotPlot_upregulated.jpg', title: 'GO Enrichment — Upregulated', category: 'go' },
+                    { file: 'MGO_GO_DotPlot_downregulated.jpg', title: 'GO Enrichment — Downregulated', category: 'go' },
+                    { file: 'MGO_KEGG_DotPlot_upregulated.jpg', title: 'KEGG Pathway — Upregulated', category: 'kegg' },
+                    { file: 'MGO_KEGG_DotPlot_downregulated.jpg', title: 'KEGG Pathway — Downregulated', category: 'kegg' }
+                ]
+            },
+            T1L: {
+                label: 'Treatment 1 — Liver (T1L)',
+                folder: 'T1L_Figures',
+                figures: [
+                    { file: 'T1L_samples_PCA_plot.png', title: 'PCA Plot', category: 'qc' },
+                    { file: 'T1L_Volcano_plot.png', title: 'Volcano Plot', category: 'deg' },
+                    { file: 'T1L_GO_DotPlot_upregulated.jpg', title: 'GO Enrichment — Upregulated', category: 'go' },
+                    { file: 'T1L_GO_DotPlot_downregulated.jpg', title: 'GO Enrichment — Downregulated', category: 'go' },
+                    { file: 'T1L_KEGG_DotPlot_Upregulated.jpg', title: 'KEGG Pathway — Upregulated', category: 'kegg' },
+                    { file: 'T1L_KEGG_DotPlot_Downregulated.jpg', title: 'KEGG Pathway — Downregulated', category: 'kegg' }
+                ]
+            },
+            T1M: {
+                label: 'Treatment 1 — Muscle (T1M)',
+                folder: 'T1M_Figures',
+                figures: [
+                    { file: 'T1M_samples_PCA_plot.png', title: 'PCA Plot', category: 'qc' },
+                    { file: 'T1M_Volcano_plot.png', title: 'Volcano Plot', category: 'deg' },
+                    { file: 'T1M_GO_DotPlot_upregulated.jpg', title: 'GO Enrichment — Upregulated', category: 'go' },
+                    { file: 'T1M_GO_DotPlot_downregulated.jpg', title: 'GO Enrichment — Downregulated', category: 'go' },
+                    { file: 'T1M_KEGG_DotPlot_Upregulated.jpg', title: 'KEGG Pathway — Upregulated', category: 'kegg' },
+                    { file: 'T1M_KEGG_DotPlot_Downregulated.jpg', title: 'KEGG Pathway — Downregulated', category: 'kegg' }
+                ]
+            },
+            T2L: {
+                label: 'Treatment 2 — Liver (T2L)',
+                folder: 'T2L_Figures',
+                figures: [
+                    { file: 'T2L_samples_PCA_plot.png', title: 'PCA Plot', category: 'qc' },
+                    { file: 'T2L_Volcano_plot.png', title: 'Volcano Plot', category: 'deg' },
+                    { file: 'T2L_GO_DotPlot_upregulated.jpg', title: 'GO Enrichment — Upregulated', category: 'go' },
+                    { file: 'T2L_GO_DotPlot_downregulated.jpg', title: 'GO Enrichment — Downregulated', category: 'go' },
+                    { file: 'T2L_KEGG_DotPlot_Upregulated.jpg', title: 'KEGG Pathway — Upregulated', category: 'kegg' },
+                    { file: 'T2L_KEGG_DotPlot_Downregulated.jpg', title: 'KEGG Pathway — Downregulated', category: 'kegg' }
+                ]
+            },
+            T2M: {
+                label: 'Treatment 2 — Muscle (T2M)',
+                folder: 'T2M_Figures',
+                figures: [
+                    { file: 'T2M_samples_PCA_plot.png', title: 'PCA Plot', category: 'qc' },
+                    { file: 'T2M_Volcano_plot.png', title: 'Volcano Plot', category: 'deg' },
+                    { file: 'T2M_GO_DotPlot_upregulated.jpg', title: 'GO Enrichment — Upregulated', category: 'go' },
+                    { file: 'T2M_GO_DotPlot_downregulated.jpg', title: 'GO Enrichment — Downregulated', category: 'go' },
+                    { file: 'T2M_KEGG_DotPlot_Upregulated.jpg', title: 'KEGG Pathway — Upregulated', category: 'kegg' },
+                    { file: 'T2M_KEGG_DotPlot_Downregulated.jpg', title: 'KEGG Pathway — Downregulated', category: 'kegg' }
+                ]
+            },
+            T3L: {
+                label: 'Treatment 3 — Liver (T3L)',
+                folder: 'T3L_Figures',
+                figures: [
+                    { file: 'samples_PCA_plot_T3L.png', title: 'PCA Plot', category: 'qc' },
+                    { file: 'Volcano_plot_T3L.png', title: 'Volcano Plot', category: 'deg' },
+                    { file: 'GO_DotPlot_upregulated_T3L.jpg', title: 'GO Enrichment — Upregulated', category: 'go' },
+                    { file: 'GO_DotPlot_downregulated_T3L.jpg', title: 'GO Enrichment — Downregulated', category: 'go' },
+                    { file: 'KEGG_DotPlot_Upregulated_T3L.jpg', title: 'KEGG Pathway — Upregulated', category: 'kegg' },
+                    { file: 'KEGG_DotPlot_Downregulated_T3L.jpg', title: 'KEGG Pathway — Downregulated', category: 'kegg' }
+                ]
+            },
+            T3M: {
+                label: 'Treatment 3 — Muscle (T3M)',
+                folder: 'T3M_Figures',
+                figures: [
+                    { file: 'T3M_samples_PCA_plot.png', title: 'PCA Plot', category: 'qc' },
+                    { file: 'T3M_Volcano_plot.png', title: 'Volcano Plot', category: 'deg' },
+                    { file: 'T3M_GO_DotPlot_upregulated.jpg', title: 'GO Enrichment — Upregulated', category: 'go' },
+                    { file: 'T3M_GO_DotPlot_downregulated.jpg', title: 'GO Enrichment — Downregulated', category: 'go' },
+                    { file: 'T3M_KEGG_DotPlot_Downregulated.jpg', title: 'KEGG Pathway — Downregulated', category: 'kegg' },
+                    { file: 'T3M_KEGG_DotPlot_Upregulated.jpg', title: 'KEGG Pathway — Upregulated', category: 'kegg' }
+                ]
+            },
+            T4L: {
+                label: 'Treatment 4 — Liver (T4L)',
+                folder: 'T4L_Figures',
+                figures: [
+                    { file: 'T4L_samples_PCA_plot.png', title: 'PCA Plot', category: 'qc' },
+                    { file: 'T4L_Volcano_plot.png', title: 'Volcano Plot', category: 'deg' },
+                    { file: 'T4L_GO_DotPlot_upregulated.jpg', title: 'GO Enrichment — Upregulated', category: 'go' },
+                    { file: 'T4L_GO_DotPlot_downregulated.jpg', title: 'GO Enrichment — Downregulated', category: 'go' },
+                    { file: 'T4L_KEGG_DotPlot_Upregulated.jpg', title: 'KEGG Pathway — Upregulated', category: 'kegg' },
+                    { file: 'T4L_KEGG_DotPlot_Downregulated.jpg', title: 'KEGG Pathway — Downregulated', category: 'kegg' }
+                ]
+            },
+            T4M: {
+                label: 'Treatment 4 — Muscle (T4M)',
+                folder: 'T4M_Figures',
+                figures: [
+                    { file: 'T4M_samples_PCA_plot.png', title: 'PCA Plot', category: 'qc' },
+                    { file: 'T4M_Volcano_plot.png', title: 'Volcano Plot', category: 'deg' },
+                    { file: 'T4M_GO_DotPlot_upregulated.jpg', title: 'GO Enrichment — Upregulated', category: 'go' },
+                    { file: 'T4M_GO_DotPlot_downregulated.jpg', title: 'GO Enrichment — Downregulated', category: 'go' },
+                    { file: 'T4M_KEGG_DotPlot_Upregulated.jpg', title: 'KEGG Pathway — Upregulated', category: 'kegg' },
+                    { file: 'T4M_KEGG_DotPlot_Downregulated.jpg', title: 'KEGG Pathway — Downregulated', category: 'kegg' }
+                ]
+            }
+        };
+
+        var CATEGORY_INFO = {
+            qc:   { label: 'Quality Control & Sample Overview', icon: 'fas fa-chart-pie' },
+            deg:  { label: 'Differential Expression Analysis', icon: 'fas fa-chart-line' },
+            go:   { label: 'GO Enrichment Analysis', icon: 'fas fa-sitemap' },
+            kegg: { label: 'KEGG Pathway Enrichment', icon: 'fas fa-project-diagram' }
+        };
+
+        var CATEGORY_ORDER = ['qc', 'deg', 'go', 'kegg'];
+
+        var currentDataset = 'FB';
+
+        // ========== Rendering ==========
+        function renderFigures(datasetKey) {
+            var ds = DATASETS[datasetKey];
+            if (!ds) return;
+            currentDataset = datasetKey;
+
+            var container = document.getElementById('figuresDisplay');
+            var html = '<h3 class="fig-dataset-title"><i class="fas fa-folder-open"></i> ' + escapeHtml(ds.label) + '</h3>';
+
+            // Group figures by category
+            var groups = {};
+            ds.figures.forEach(function(fig) {
+                if (!groups[fig.category]) groups[fig.category] = [];
+                groups[fig.category].push(fig);
+            });
+
+            CATEGORY_ORDER.forEach(function(cat) {
+                if (!groups[cat]) return;
+                var info = CATEGORY_INFO[cat];
+                html += '<div class="fig-category-section">';
+                html += '<h4 class="fig-category-heading"><i class="' + info.icon + '"></i> ' + escapeHtml(info.label) + '</h4>';
+                html += '<div class="fig-grid">';
+                groups[cat].forEach(function(fig) {
+                    var src = BASE + ds.folder + '/' + fig.file;
+                    html += '<div class="fig-card" onclick="openLightbox(\'' + escapeAttr(src) + '\', \'' + escapeAttr(fig.title + ' — ' + ds.label) + '\')">';
+                    html += '<div class="fig-card-img-wrap">';
+                    html += '<img src="' + escapeAttr(src) + '" alt="' + escapeAttr(fig.title) + '" loading="lazy">';
+                    html += '<div class="fig-card-zoom"><i class="fas fa-search-plus"></i></div>';
+                    html += '</div>';
+                    html += '<div class="fig-card-caption">' + escapeHtml(fig.title) + '</div>';
+                    html += '</div>';
+                });
+                html += '</div></div>';
+            });
+
+            container.innerHTML = html;
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        function escapeAttr(str) {
+            return str.replace(/&/g, '&amp;').replace(/'/g, '&#39;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        // ========== Lightbox ==========
+        var lightboxOverlay = null;
+
+        function createLightbox() {
+            lightboxOverlay = document.createElement('div');
+            lightboxOverlay.className = 'fig-lightbox-overlay';
+            lightboxOverlay.innerHTML =
+                '<div class="fig-lightbox-content">' +
+                    '<button class="fig-lightbox-close" aria-label="Close">&times;</button>' +
+                    '<img class="fig-lightbox-img" src="" alt="">' +
+                    '<div class="fig-lightbox-caption"></div>' +
+                '</div>';
+            document.body.appendChild(lightboxOverlay);
+
+            lightboxOverlay.querySelector('.fig-lightbox-close').addEventListener('click', closeLightbox);
+            lightboxOverlay.addEventListener('click', function(e) {
+                if (e.target === lightboxOverlay) closeLightbox();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeLightbox();
+            });
+        }
+
+        window.openLightbox = function(src, caption) {
+            if (!lightboxOverlay) createLightbox();
+            lightboxOverlay.querySelector('.fig-lightbox-img').src = src;
+            lightboxOverlay.querySelector('.fig-lightbox-img').alt = caption;
+            lightboxOverlay.querySelector('.fig-lightbox-caption').textContent = caption;
+            lightboxOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        function closeLightbox() {
+            if (lightboxOverlay) {
+                lightboxOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // ========== Tab & Selector Events ==========
+        function initTabs() {
+            var tabBtns = document.querySelectorAll('.fig-study-tab');
+            tabBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    tabBtns.forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    var group = btn.getAttribute('data-group');
+                    document.querySelectorAll('.fig-group').forEach(function(g) {
+                        g.style.display = 'none';
+                    });
+                    document.getElementById('group-' + group).style.display = '';
+
+                    // Activate first dataset in the new group
+                    var firstBtn = document.querySelector('#group-' + group + ' .fig-dataset-btn');
+                    if (firstBtn) {
+                        var siblings = document.querySelectorAll('#group-' + group + ' .fig-dataset-btn');
+                        siblings.forEach(function(s) { s.classList.remove('active'); });
+                        firstBtn.classList.add('active');
+                        renderFigures(firstBtn.getAttribute('data-dataset'));
+                    }
+                });
+            });
+
+            document.querySelectorAll('.fig-dataset-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var parent = btn.closest('.fig-group');
+                    parent.querySelectorAll('.fig-dataset-btn').forEach(function(s) { s.classList.remove('active'); });
+                    btn.classList.add('active');
+                    renderFigures(btn.getAttribute('data-dataset'));
+                });
+            });
+        }
+
+        // ========== Init ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            initTabs();
+            renderFigures('FB');
+        });
+    })();
+    </script>
+</body>
+</html>

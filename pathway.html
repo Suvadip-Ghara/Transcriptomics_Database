@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathway Analysis - CST-Hub Channa striata Transcriptomics Database</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-top-section">
+            <img src="CIFA Logo.png" alt="CIFA Logo" class="logo-top">
+            <img src="IASRI.png" alt="ICAR-IASRI Logo" class="logo-top" style="margin-left: 20px;">
+        </div>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-text">
+                    <h1>CST-Hub<sup>TDB</sup></h1>
+                </div>
+            </div>
+            <button class="hamburger" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="deg.html">DEG</a></li>
+                    <li><a href="functional.html">Search</a></li>
+                    <li><a href="pathway.html" class="active">Pathway</a></li>
+                    <li><a href="figures.html">Figures</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-container">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pathway Analysis</h2>
+                <p>Explore metabolic and signaling pathways in Channa striata</p>
+            </div>
+
+            <!-- Pathway Visualizations -->
+            <div class="chart-container-grid">
+                <div class="chart-box-large">
+                    <h3>Top 15 Pathways by Gene Count</h3>
+                    <canvas id="pathwayBarChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h3>Pathway Classification</h3>
+                    <canvas id="pathwayClassChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Search -->
+            <div class="search-bar-container" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div class="search-input-wrapper">
+                    <input type="text" id="pathwaySearchInput" class="form-control" placeholder="Search Pathways (e.g., Glycolysis, Immune System)...">
+                </div>
+            </div>
+
+            <!-- Pathway Grid -->
+            <div class="features-grid" id="pathwayGrid">
+                <!-- Data will be populated by JS -->
+            </div>
+
+            <div class="pagination" id="pathwayPagination"></div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About CST-Hub</h3>
+                    <p style="color: #94a3b8; line-height: 1.6;">CST-Hub is a comprehensive transcriptomics resource for gene expression analysis and functional genomics in striped murrel (<i>Channa striata</i>), developed by ICAR-CIFA to support aquaculture research and development.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Project</a></li>
+                        <li><a href="deg.html">DEG Analysis</a></li>
+                        <li><a href="functional.html">Search Genes</a></li>
+                        <li><a href="pathway.html">Pathway Analysis</a></li>
+                        <li><a href="figures.html">Figures Gallery</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Information</h3>
+                    <ul id="footerInfoMenu">
+                        <li><a href="#" onclick="toggleFooterSection('about-info')">About Us</a></li>
+                        <li><a href="#" onclick="toggleFooterSection('team-info')">Our Team</a></li>
+                        <li><a href="#" onclick="toggleFooterSection('contact-info')">Contact Us</a></li>
+                        <li><a href="privacy.html" onclick="event.stopPropagation()">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html" onclick="event.stopPropagation()">Website Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-map-marker-alt" style="width: 20px; color: var(--md-tertiary-light);"></i> <strong>ICAR-CIFA</strong><br><span style="margin-left: 28px; display: block;">Kausalyaganga, Bhubaneswar, Odisha 751023</span></li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-phone" style="width: 20px; color: var(--md-tertiary-light);"></i> +91-674-2305407</li>
+                        <li style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="width: 20px; color: var(--md-tertiary-light);"></i> director@cifa.res.in</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                        <a href="https://twitter.com/icarcifa/" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://www.facebook.com/icarcifa" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://www.youtube.com/channel/UC0jyxfGad5yDGE-nBe6H-9w" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                    <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.15); margin: 1.5rem 0;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-map-marker-alt" style="width: 20px; color: var(--md-tertiary-light);"></i> <strong>ICAR-IASRI</strong><br><span style="margin-left: 28px; display: block;">Library Avenue, Pusa, New Delhi 110012</span></li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-phone" style="width: 20px; color: var(--md-tertiary-light);"></i> +91-11-25847121</li>
+                        <li style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="width: 20px; color: var(--md-tertiary-light);"></i> director.iasri@icar.gov.in</li>
+                    </ul>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                        <a href="https://twitter.com/IABORASDIARY" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://www.facebook.com/iaboracademy/" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-facebook fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 CST-Hub - Channa striata Transcriptomics Hub | Powered by ICAR-CIFA</p>
+            </div>
+        </div>
+
+        <!-- Hidden Footer Info Sections -->
+        <div id="footerInfoContent" style="display: none; background: rgba(0,0,0,0.3); padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div id="about-info" class="footer-info-section" style="display: none;">
+                        <h4 style="color: var(--md-tertiary-light); margin-bottom: 1rem;"><i class="fas fa-info-circle"></i> About Us</h4>
+                        <p style="color: #94a3b8; line-height: 1.7; font-size: 14px;">
+                            CST-Hub is developed by ICAR-Central Institute of Freshwater Aquaculture (CIFA) as a comprehensive transcriptomics resource. Our mission is to provide researchers and aquaculture scientists with accessible, high-quality gene expression data to advance research in striped murrel biology and aquaculture innovation.
+                        </p>
+                    </div>
+                    <div id="team-info" class="footer-info-section" style="display: none;">
+                        <h4 style="color: var(--md-tertiary-light); margin-bottom: 1rem;"><i class="fas fa-users"></i> Our Team</h4>
+                        <p style="color: #94a3b8; line-height: 1.7; font-size: 14px;">
+                            <strong>Principal Investigator:</strong> Dr. J. K. Sundaray (ICAR-CIFA)<br>
+                            <strong>Co-Investigators:</strong> Dr. Rajesh Kumar, Dr. Lakshman Sahoo, Mr. Jackson Debbarma (ICAR-CIFA), Dr. Dinesh Kumar, Dr. Sarika (ICAR-IASRI)<br>
+                            <strong>Research Scholars (YP-II):</strong> Dr. Madhusmita Mohapatra, Iyyappan Somasundharam, Suvadip Ghara (ICAR-CIFA)<br>
+                            Our dedicated team brings expertise in genomics, bioinformatics, and aquaculture research.
+                        </p>
+                    </div>
+                    <div id="contact-info" class="footer-info-section" style="display: none;">
+                        <h4 style="color: var(--md-tertiary-light); margin-bottom: 1rem;"><i class="fas fa-phone-alt"></i> Contact Us</h4>
+                        <p style="color: #94a3b8; line-height: 1.7; font-size: 14px;">
+                            <strong>Email:</strong> director@cifa.res.in<br>
+                            <strong>Phone:</strong> +91-674-2305407<br>
+                            <strong>Address:</strong> ICAR-CIFA, Kausalyaganga, Bhubaneswar, Odisha 751023
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 30px; border-radius: 8px; text-align: center;">
+            <div style="width: 50px; height: 50px; border: 5px solid #f3f3f3; border-top: 5px solid var(--primary-color); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 15px;"></div>
+            <p style="color: var(--dark-bg); margin: 0;">Loading data...</p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+
+    <script src="js/api.js"></script>
+    <script src="script_api.js"></script>
+</body>
+</html>

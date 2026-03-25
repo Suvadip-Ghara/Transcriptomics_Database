@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CST-Hub - CIFA Channa striata Transcriptomics Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-top-section">
+            <img src="CIFA Logo.png" alt="CIFA Logo" class="logo-top">
+            <img src="IASRI.png" alt="ICAR-IASRI Logo" class="logo-top" style="margin-left: 20px;">
+        </div>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-text">
+                    <h1>CST-Hub<sup>TDB</sup></h1>
+                </div>
+            </div>
+            <button class="hamburger" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="deg.html">DEG</a></li>
+                    <li><a href="functional.html">Search</a></li>
+                    <li><a href="pathway.html">Pathway</a></li>
+                    <li><a href="figures.html">Figures</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-wrapper">
+                <div class="hero-text">
+                    <h1><i>Channa striata</i> Transcriptomics Hub</h1>
+                    <p>A comprehensive transcriptomics resource providing access to genome-wide gene expression data of <i>Channa striata</i>. Discover genes associated with reproduction, growth, nutrition, and disease resistance.</p>
+                    <div class="hero-buttons">
+                        <a href="functional.html" class="btn btn-primary"><i class="fas fa-search"></i>&nbsp; Search Genes</a>
+                        <a href="about.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="murrel-fish.jpg" alt="Murrel Fish">
+                </div>
+            </div>
+        </section>
+
+        <!-- Channa striata Detailed Information Section -->
+        <section class="section" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About <i>Channa striata</i> (Striped Murrel)</h2>
+                    <p>A commercially important freshwater fish species of South and Southeast Asia</p>
+                </div>
+
+                <!-- Taxonomy & General Biology -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 2.5rem;">
+                    <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-fish" style="color: var(--secondary-color);"></i> Taxonomy &amp; Classification
+                        </h3>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.5rem 0; font-weight: 600; color: var(--text-secondary); width: 40%;">Kingdom</td>
+                                <td style="padding: 0.5rem 0;">Animalia</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.5rem 0; font-weight: 600; color: var(--text-secondary);">Phylum</td>
+                                <td style="padding: 0.5rem 0;">Chordata</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.5rem 0; font-weight: 600; color: var(--text-secondary);">Class</td>
+                                <td style="padding: 0.5rem 0;">Actinopterygii</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.5rem 0; font-weight: 600; color: var(--text-secondary);">Order</td>
+                                <td style="padding: 0.5rem 0;">Anabantiformes</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.5rem 0; font-weight: 600; color: var(--text-secondary);">Family</td>
+                                <td style="padding: 0.5rem 0;">Channidae</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.5rem 0; font-weight: 600; color: var(--text-secondary);">Genus</td>
+                                <td style="padding: 0.5rem 0;"><i>Channa</i></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 0; font-weight: 600; color: var(--text-secondary);">Species</td>
+                                <td style="padding: 0.5rem 0;"><i>C. striata</i> (Bloch, 1793)</td>
+                            </tr>
+                        </table>
+                        <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                            <strong>Common names:</strong> Striped Snakehead, Striped Murrel, Chevron Snakehead, Snakehead Murrel
+                        </p>
+                    </div>
+
+                    <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-globe-asia" style="color: var(--secondary-color);"></i> General Biology &amp; Habitat
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+                            <i>Channa striata</i> is a freshwater predatory fish native to South and Southeast Asia. It is widely distributed across India, Pakistan, Bangladesh, Sri Lanka, Nepal, Myanmar, Thailand, Malaysia, and Indonesia. The species inhabits a variety of freshwater habitats including rivers, lakes, swamps, ponds, canals, and rice paddies.
+                        </p>
+                        <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+                            It possesses an elongated, cylindrical body with a flattened, snake-like head that gives it the name "snakehead." The body is dark brown to olive-green dorsally with irregular dark blotches and chevron-shaped bands along the flanks. Adults typically reach 30&ndash;90 cm in length and can weigh up to 3&ndash;4 kg.
+                        </p>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            A remarkable feature of <i>C. striata</i> is the presence of a suprabranchial (accessory breathing) organ, which enables it to breathe atmospheric air. This adaptation allows the fish to survive in oxygen-depleted waters and even traverse short distances over land between water bodies.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reproductive Biology -->
+                <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 2.5rem;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-venus-mars" style="color: var(--secondary-color);"></i> Reproductive Biology
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;"><i class="fas fa-calendar-alt" style="margin-right: 0.5rem; color: var(--secondary-color);"></i>Breeding Season</h4>
+                            <p style="color: var(--text-secondary); line-height: 1.8;">
+                                <i>C. striata</i> is a seasonal breeder with peak spawning activity during the monsoon months (June&ndash;September in India). Spawning is triggered by rising water levels, rainfall, and associated environmental cues. The species typically breeds once per year in natural conditions, though multiple spawning events have been reported in aquaculture settings under induced breeding protocols.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;"><i class="fas fa-egg" style="margin-right: 0.5rem; color: var(--secondary-color);"></i>Fecundity &amp; Spawning</h4>
+                            <p style="color: var(--text-secondary); line-height: 1.8;">
+                                Females attain sexual maturity at 1&ndash;2 years of age (approximately 20&ndash;25 cm total length). Fecundity ranges from 2,000 to 30,000 eggs depending on the size of the female. The eggs are non-adhesive, buoyant (due to oil globules), and float on the water surface. Egg diameter ranges from 1.2&ndash;1.6 mm, and hatching occurs within 24&ndash;48 hours at 26&ndash;30&deg;C.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;"><i class="fas fa-shield-alt" style="margin-right: 0.5rem; color: var(--secondary-color);"></i>Parental Care</h4>
+                            <p style="color: var(--text-secondary); line-height: 1.8;">
+                                A distinctive feature of <i>C. striata</i> is its remarkable parental care behaviour. Both parents guard the eggs and newly hatched larvae at the water surface. The male is particularly aggressive in protecting the nest. Parental care continues for 2&ndash;4 weeks until the fry become independent and free-swimming, which significantly improves larval survival rates.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;"><i class="fas fa-dna" style="margin-right: 0.5rem; color: var(--secondary-color);"></i>Gonadal Development</h4>
+                            <p style="color: var(--text-secondary); line-height: 1.8;">
+                                The gonadal development cycle follows five maturation stages: immature, developing, maturing, ripe/spawning, and spent. The gonadosomatic index (GSI) peaks during the pre-spawning and spawning months (May&ndash;August). Hormonal regulation involving the hypothalamic-pituitary-gonadal (HPG) axis plays a key role in gonadal maturation, with GnRH, FSH, LH, and steroid hormones orchestrating the reproductive cycle.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Production & Aquaculture -->
+                <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 2.5rem;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-industry" style="color: var(--secondary-color);"></i> Production &amp; Aquaculture Importance
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;"><i class="fas fa-chart-line" style="margin-right: 0.5rem; color: var(--secondary-color);"></i>Economic Significance</h4>
+                            <p style="color: var(--text-secondary); line-height: 1.8;">
+                                <i>Channa striata</i> is one of the most economically valuable freshwater fish species in Asia. It commands a premium market price due to its firm, white, boneless flesh and excellent taste. In India, it is considered a high-value food fish and fetches prices significantly higher than major carps. It contributes substantially to inland fisheries and is a key species for food security in rural households.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;"><i class="fas fa-water" style="margin-right: 0.5rem; color: var(--secondary-color);"></i>Culture Practices</h4>
+                            <p style="color: var(--text-secondary); line-height: 1.8;">
+                                Aquaculture of <i>C. striata</i> has been gaining momentum across South and Southeast Asian countries. Culture is practised in earthen ponds, cement tanks, cages, and biofloc systems. The species adapts well to intensive culture conditions due to its air-breathing ability and tolerance to poor water quality. Stocking densities of 10,000&ndash;50,000 fingerlings/ha with supplementary feeding using trash fish or formulated pellets yield productions of 3&ndash;8 tonnes/ha/year.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;"><i class="fas fa-seedling" style="margin-right: 0.5rem; color: var(--secondary-color);"></i>Growth Performance</h4>
+                            <p style="color: var(--text-secondary); line-height: 1.8;">
+                                <i>C. striata</i> exhibits rapid growth under favourable culture conditions. It can attain 500&ndash;800 g in 8&ndash;12 months of culture. Growth is influenced by stocking density, feed quality, water temperature, and management practices. The species is a carnivorous feeder, naturally preying on smaller fish, crustaceans, insects, and molluscs. In aquaculture, it can be weaned onto formulated diets with protein levels of 40&ndash;50%.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;"><i class="fas fa-capsules" style="margin-right: 0.5rem; color: var(--secondary-color);"></i>Nutritional &amp; Medicinal Value</h4>
+                            <p style="color: var(--text-secondary); line-height: 1.8;">
+                                The flesh of <i>C. striata</i> is rich in essential amino acids (especially glycine and proline), polyunsaturated fatty acids (PUFAs including omega-3 and omega-6), and minerals (zinc, iron, calcium). It is traditionally used in many Asian countries for wound healing and post-surgical recovery. Scientific studies have confirmed the presence of bioactive compounds such as arachidonic acid and albumin that promote tissue repair and reduce inflammation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenges & Research Significance -->
+                <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-microscope" style="color: var(--secondary-color);"></i> Research Significance &amp; Challenges
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;"><i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem; color: var(--secondary-color);"></i>Key Challenges</h4>
+                            <ul style="color: var(--text-secondary); line-height: 2; padding-left: 1.2rem;">
+                                <li>Declining wild populations due to overfishing and habitat degradation</li>
+                                <li>Limited availability of quality seed/fingerlings for aquaculture</li>
+                                <li>Cannibalistic behaviour, especially in larval and juvenile stages</li>
+                                <li>Susceptibility to diseases such as Epizootic Ulcerative Syndrome (EUS)</li>
+                                <li>Lack of selective breeding programmes for growth improvement</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;"><i class="fas fa-lightbulb" style="margin-right: 0.5rem; color: var(--secondary-color);"></i>Why Transcriptomics?</h4>
+                            <p style="color: var(--text-secondary); line-height: 1.8;">
+                                Transcriptomic studies in <i>C. striata</i> are crucial for understanding the molecular mechanisms underlying reproduction, growth, immunity, and stress responses. Gene expression profiling helps identify candidate genes and pathways associated with economically important traits, enabling marker-assisted selection, improved broodstock management, and development of disease-resistant strains. The CST-Hub database aims to serve as a centralised resource for all such transcriptomic data to accelerate genomics-driven aquaculture improvement of this prized species.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Database Features</h2>
+                    <p>Explore the comprehensive transcriptomics tools and resources available in CST-Hub</p>
+                </div>
+                <div class="features-grid">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-dna"></i></div>
+                        <h3>DEG Analysis</h3>
+                        <p>Explore differentially expressed genes across various tissues and conditions. Visualize LogFC and P-values.</p>
+                        <a href="deg.html" class="card-link">Explore Data <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h3>Pathway Analysis</h3>
+                        <p>Detailed information about metabolic pathways, gonadal development, and breeding characteristics.</p>
+                        <a href="pathway.html" class="card-link">View Pathways <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-search"></i></div>
+                        <h3>Functional Search</h3>
+                        <p>Search for specific genes, GO terms, or annotations to find relevant biological information.</p>
+                        <a href="functional.html" class="card-link">Start Searching <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: white;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About The Project</h2>
+                    <p>Advancing aquaculture through genomic research</p>
+                </div>
+                <div style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <img src="database-architecture.jpg" alt="Database Architecture" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md);">
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Transcriptomics Resource for Striped Murrel</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                            The CST-Hub is a pivotal transcriptomics resource for researchers studying the striped murrel (<i>Channa striata</i>).
+                            It provides gene expression profiles across reproductive, nutritional, and disease-associated pathways.
+                        </p>
+                        <ul style="color: var(--text-secondary); margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--secondary-color); margin-right: 0.5rem;"></i> Growth & Metabolism Genes</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--secondary-color); margin-right: 0.5rem;"></i> Reproductive Physiology</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--secondary-color); margin-right: 0.5rem;"></i> Disease Resistance Markers</li>
+                        </ul>
+                        <a href="about.html" class="btn btn-outline">Read Full Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About CST-Hub</h3>
+                    <p style="color: #94a3b8; line-height: 1.6;">CST-Hub is a comprehensive transcriptomics resource for gene expression analysis and functional genomics in striped murrel (<i>Channa striata</i>), developed by ICAR-CIFA to support aquaculture research and development.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Project</a></li>
+                        <li><a href="deg.html">DEG Analysis</a></li>
+                        <li><a href="functional.html">Search Genes</a></li>
+                        <li><a href="pathway.html">Pathway Analysis</a></li>
+                        <li><a href="figures.html">Figures Gallery</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Information</h3>
+                    <ul id="footerInfoMenu">
+                        <li><a href="#" onclick="toggleFooterSection('about-info')">About Us</a></li>
+                        <li><a href="#" onclick="toggleFooterSection('team-info')">Our Team</a></li>
+                        <li><a href="#" onclick="toggleFooterSection('contact-info')">Contact Us</a></li>
+                        <li><a href="privacy.html" onclick="event.stopPropagation()">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html" onclick="event.stopPropagation()">Website Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-map-marker-alt" style="width: 20px; color: var(--md-tertiary-light);"></i> <strong>ICAR-CIFA</strong><br><span style="margin-left: 28px; display: block;">Kausalyaganga, Bhubaneswar, Odisha 751023</span></li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-phone" style="width: 20px; color: var(--md-tertiary-light);"></i> +91-674-2305407</li>
+                        <li style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="width: 20px; color: var(--md-tertiary-light);"></i> director@cifa.res.in</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                        <a href="https://twitter.com/icarcifa/" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://www.facebook.com/icarcifa" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://www.youtube.com/channel/UC0jyxfGad5yDGE-nBe6H-9w" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                    <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.15); margin: 1.5rem 0;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-map-marker-alt" style="width: 20px; color: var(--md-tertiary-light);"></i> <strong>ICAR-IASRI</strong><br><span style="margin-left: 28px; display: block;">Library Avenue, Pusa, New Delhi 110012</span></li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-phone" style="width: 20px; color: var(--md-tertiary-light);"></i> +91-11-25847121</li>
+                        <li style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="width: 20px; color: var(--md-tertiary-light);"></i> director.iasri@icar.gov.in</li>
+                    </ul>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                        <a href="https://twitter.com/IABORASDIARY" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://www.facebook.com/iaboracademy/" target="_blank" rel="noopener noreferrer" style="color: var(--md-tertiary-light); transition: all 0.2s;"><i class="fab fa-facebook fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 CST-Hub - Channa striata Transcriptomics Hub | Powered by ICAR-CIFA</p>
+            </div>
+        </div>
+
+        <!-- Hidden Footer Info Sections -->
+        <div id="footerInfoContent" style="display: none; background: rgba(0,0,0,0.3); padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div id="about-info" class="footer-info-section" style="display: none;">
+                        <h4 style="color: var(--md-tertiary-light); margin-bottom: 1rem;"><i class="fas fa-info-circle"></i> About Us</h4>
+                        <p style="color: #94a3b8; line-height: 1.7; font-size: 14px;">
+                            CST-Hub is developed by ICAR-Central Institute of Freshwater Aquaculture (CIFA) as a comprehensive transcriptomics resource. Our mission is to provide researchers and aquaculture scientists with accessible, high-quality gene expression data to advance research in striped murrel biology and aquaculture innovation.
+                        </p>
+                    </div>
+                    <div id="team-info" class="footer-info-section" style="display: none;">
+                        <h4 style="color: var(--md-tertiary-light); margin-bottom: 1rem;"><i class="fas fa-users"></i> Our Team</h4>
+                        <p style="color: #94a3b8; line-height: 1.7; font-size: 14px;">
+                            <strong>Principal Investigator:</strong> Dr. J. K. Sundaray (ICAR-CIFA)<br>
+                            <strong>Co-Investigators:</strong> Dr. Rajesh Kumar, Dr. Lakshman Sahoo, Mr. Jackson Debbarma (ICAR-CIFA), Dr. Dinesh Kumar, Dr. Sarika (ICAR-IASRI)<br>
+                            <strong>Research Scholars (YP-II):</strong> Dr. Madhusmita Mohapatra, Iyyappan Somasundharam, Suvadip Ghara (ICAR-CIFA)<br>
+                            Our dedicated team brings expertise in genomics, bioinformatics, and aquaculture research.
+                        </p>
+                    </div>
+                    <div id="contact-info" class="footer-info-section" style="display: none;">
+                        <h4 style="color: var(--md-tertiary-light); margin-bottom: 1rem;"><i class="fas fa-phone-alt"></i> Contact Us</h4>
+                        <p style="color: #94a3b8; line-height: 1.7; font-size: 14px;">
+                            <strong>Email:</strong> director@cifa.res.in<br>
+                            <strong>Phone:</strong> +91-674-2305407<br>
+                            <strong>Address:</strong> ICAR-CIFA, Kausalyaganga, Bhubaneswar, Odisha 751023
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script_api.js"></script>
+</body>
+</html>
