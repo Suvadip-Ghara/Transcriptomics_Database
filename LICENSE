@@ -1,0 +1,3 @@
+## License
+
+The source code of the CST-Hub web application and database is released under the MIT License (see `LICENSE`). Database content (differential expression results, annotations, expression counts and quality statistics) is available under the Creative Commons Attribution 4.0 International licence (CC BY 4.0); please cite the associated manuscript. The CIFA and IASRI logos and the images in this repository are excluded from these licences and remain the property of their institutions. Third-party components (Chart.js, Plotly.js, Font Awesome Free, Montserrat font) are used under their own licences.
