@@ -4,13 +4,13 @@ A web-based transcriptomics resource for striped murrel (*Channa striata*), deve
 
 ## Overview
 
-CST-Hub provides searchable access to RNA-Seq derived gene expression data covering reproductive biology, PUFA metabolism, and gut microbiome dynamics in *C. striata*. The platform supports DEG analysis, gene-level expression queries, functional annotations, pathway exploration, and interactive visualizations.
+CST-Hub provides searchable access to RNA-Seq derived gene expression data covering reproductive biology, PUFA metabolism, and gut microbiome dynamics in *C. striata*. The platform supports DEG analysis, expression browsing, functional annotation, pathway exploration, and access to supporting figures and statistics.
 
 ## Scope of this repository
 
-This repository contains the source code of the CST-Hub web application and its relational database only: the PHP/MySQL API (`api/`), database schema (`config/database/schema.sql`), front-end pages (`*.html`, `script_api.js`, `js/api.js`, `styles.css`) and the figure gallery.
+This repository contains the source code of the CST-Hub web application and its relational database only: the PHP/MySQL API (`api/`), database schema (`config/database/schema.sql`), front-end pages, JavaScript modules, stylesheets, and supporting figures.
 
-It is not a repository for transcriptomic analysis workflows. Scripts for RNA-Seq quality control, read alignment or de novo assembly, quantification, differential expression and enrichment analysis are not distributed here. The tools, versions, thresholds and statistical settings used to generate the data are described in the associated manuscript (Materials and Methods, Tables 2 and 4) and, for the PUFA dietary dataset, in Iyyappan et al. (2026, Journal of Agriculture and Food Research, 27, 102805). Raw sequencing reads are available from NCBI under BioProjects PRJNA1270933 (PUFA dietary dataset) and PRJNA1482812 (captive-versus-wild dataset). Pre-computed differential expression results, annotations and expression counts are served through the CST-Hub web interface and API.
+It is not a repository for transcriptomic analysis workflows. Scripts for RNA-Seq quality control, read alignment or de novo assembly, quantification, differential expression and enrichment analysis are maintained separately.
 
 ## Stack
 
@@ -56,5 +56,9 @@ Set `DEBUG_MODE` to false in `config/database.php` for production use.
 **Research Scholars (YP-II):** Dr. Madhusmita Mohapatra, Iyyappan Somasundharam, Suvadip Ghara (ICAR-CIFA)
 
 ## License
+
+The CST-Hub source code and database application are released under the [MIT License](LICENSE). The database content—including differential expression results, annotations, expression counts, and quality statistics—is available under the [Creative Commons Attribution 4.0 International licence (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+Please cite the associated manuscript when using the CST-Hub database or its data. The CIFA and IASRI logos and repository images are excluded from these licences and remain the property of their respective institutions. Third-party components, including Chart.js, Plotly.js, Font Awesome Free, and the Montserrat font, are used under their own licences.
 
 Copyright © 2026 CST-Hub — Channa striata Transcriptomics Hub | ICAR-CIFA , ICAR-IASRI
